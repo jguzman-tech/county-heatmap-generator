@@ -10,7 +10,9 @@ heatmap uses as its Z dimension.
 *** 1.2. Environment setup
 These steps assume a linux system.
 *** 1.3. Clone the repository
-git@github.com:jguzman-tech/county-heatmap-generator.git
+#+BEGIN_SRC
+git clone git@github.com:jguzman-tech/county-heatmap-generator.git
+#+END_SRC
 *** 1.4. Create an arbitrary directory
 #+BEGIN_SRC
 mkdir ./.venv

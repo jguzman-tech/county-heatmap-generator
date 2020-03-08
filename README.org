@@ -45,6 +45,23 @@ This will be saved on all future shells sessions for your current user.
 pip3 install -r ./requirements.txt
 #+END_SRC
 ** 2. Execution
-TBD
-** 3. Reproduce results
-TBD
+There are three steps
+*** 2.1. Parse all .csv files into .pkl files
+Use my parse_files.sh script to convert all csv files into compressed pandas
+dataframes (.pkl) files. This will read all the files matching this pattern
+"./data/*.csv" and create .pkl files following this pattern "./jar/*.pkl". This
+bash script executes my data_parser.py script for each file matching the
+pattern.
+#+BEGIN_SRC
+./parse_files.sh
+#+END_SRC
+*** 2.2. Merge the hit counts for all .pkl files into one
+#+BEGIN_SRC
+python3 -W ignore -u data_combiner.py ./jar/ ./final_data.pkl
+#+END_SRC
+*** 2.3. Create a heatmap based on the final_data.pkl created previously
+#+BEGIN_SRC
+python3 heatmap_generator.py final_data.pkl final_data.html
+#+END_SRC
+Open this final_data.html file in a browser to view the heatmap. You can hover
+of the county to get the FIPS Code, Name, and "hits" for each county.

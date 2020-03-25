@@ -17,7 +17,11 @@ git clone git@github.com:jguzman-tech/county-heatmap-generator.git
 #+BEGIN_SRC
 mkdir ./.venv
 #+END_SRC
-*** 1.5. Activate the virtual environment
+*** 1.5. Create a virtual environment
+#+BEGIN_SRC
+python3 -m venv ./.venv
+#+END_SRC
+*** 1.6. Activate the virtual environment
 #+BEGIN_SRC
 . ./.venv/bin/activate
 #+END_SRC
@@ -40,7 +44,7 @@ source ~/.bashrc
 act
 #+END_SRC
 This will be saved on all future shells sessions for your current user.
-*** 1.6. Install module requirements
+*** 1.7. Install module requirements
 #+BEGIN_SRC
 pip3 install -r ./requirements.txt
 #+END_SRC

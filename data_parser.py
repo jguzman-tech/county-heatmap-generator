@@ -6,7 +6,7 @@ import fiona
 import branca
 import json
 import numpy as np
-import pdb # put pdb.set_trace() anywhere 
+import pdb # put pdb.set_trace() anywhere to set a breakpoint
 import ast
 import copy
 import plotly.express as px
@@ -15,7 +15,7 @@ import argparse
 
 def parse_inner_county_data(data):
     data = ast.literal_eval(data)
-    return data['fips']['County']
+    return data[[*data.keys()][-1]]['County']
 
 if __name__ == "__main__":
 

@@ -52,7 +52,9 @@ if __name__ == "__main__":
         fips = str(key)
         fips = fips.zfill(5) # 0 padded
         hits = all_hits[key][0]
-        name = all_hits[key][1] + " County"
+        name = all_hits[key][1]
+        if name.find("County") == -1:
+            name += " County"
         all_pd = all_pd.append({'fips':fips, 'name':name, 'hits':hits},
                       ignore_index=True)
 
